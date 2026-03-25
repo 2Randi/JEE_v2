@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des Campus - Université de Montpellier</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="protected.js"></script>
+    
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
+    
+</head>
+
+<body class="bg-light">
+
+	<!-- Informations utilisateur -->
+	<div class="user-info text-end p-3">
+	    <p><strong><span th:text="${nom}"></span></strong></p>
+	    <p><strong><span th:text="${role}"></span></strong></p>
+	    <a href="/logout" class="btn btn-outline-danger btn-sm">Déconnexion</a>
+	</div>
+
+    <!-- Titre et message de bienvenue -->
+   </br>
+   </br>
+   </br>
+    <div class="container py-5">
+        <div class="title">
+            <h2>Gestion des campus universitaires - Université de Montpellier</h2>
+        </div>
+        
+
+        <div class="main-content">
+            <div class="left-image">
+                <img src="/images/triolet.jpg" alt="Image Triolet" class="img-fluid rounded shadow">
+            </div>
+
+            <!-- Liens à droite -->
+            <div class="right-links">
+            	<p>Bienvenue <strong><span th:text="${nom}"></span></strong> !!!</p></br>
+	            <p>Découvrez tous les <a href="/campus" class="link-primary">campus</a> de l'université</p>
+	            <p>Accédez aux <a href="/batiments" class="link-primary">batiments</a> des différents campus</p>
+	            <p>Consultez les <a href="/salle" class="link-primary">salles</a> disponibles sur les campus</p>
+	            <p>Découvrez les <a href="/composante" class="link-primary">composantes</a> de chaque batiment</p></br>
+	            <p><a href="/associer" class="link-primary">Associer</a>, <a href="/dissocier" class="link-primary">dissocier</a> une composante à un batiment</p>
+	        </div>
+        </div>
+    </div>
+
+    <!-- Pied de page -->
+    <footer>
+        <p>&copy; 2025 Université de Montpellier - Informatique - <strong>Tsiory RANDRIAMISAINA</strong></p>
+    </footer>
+
+</body>
+
+</html>

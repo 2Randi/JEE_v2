@@ -1,0 +1,80 @@
+
+	                
+	                <div class="row mb-3">
+                    <!-- Sélection du bâtiment -->
+                    	<label for="codeB" class="col-sm-4 col-form-label text-end">Batiment : </label>
+                    	<div class="col-sm-8">
+		                    <select name="codeB" class="form-select" required>
+		                        <option th:each="batiment : ${batimentList}" th:value="${batiment.codeB}" th:text="${batiment.codeB}" th:selected="${batiment.codeB == selectedBatiment}">Batiment</option>
+		                    </select>
+		                </div>
+	                </div>
+	                
+	                
+	                
+	           
+	                
+
+	    	        <div class="mb-3">
+	    	            <label for="codeB" class="form-label">Batiment</label>
+	    	            <select id="codeB" name="newBatiment" class="form-select" required>
+	    	                <option th:each="batiment : ${batimentList}" th:value="${batiment.codeB}" th:text="${batiment.codeB}" th:selected="${batiment.codeB == selectedBatiment}">Batiment</option>
+	    	            </select>
+	    	        </div>
+	    	        
+	    	        
+	    	        
+
+	    	        <div class="row g-4">
+	    	        <!-- Boucle sur campusList -->
+	    		        <div class="col-md-3 col-lg-3" th:each="campus : ${campusList}">
+	    		            <div class="card shadow-sm" style="margin: 10px;">
+	    		                <div class="card-body">
+	    		                    <h5 class="card-title" th:text="${campus.nomC}">Nom campus</h5>
+	    		                    <p class="card-text">
+	    		                        <strong>Nom :</strong> <span th:text="${campus.nomC}">Nom campus</span><br>
+	    		                        <strong>Responsable :</strong> <span th:text="${campus.ville}">Ville</span><br>
+	    		                        
+	    		                    </p>
+	    		                </div>
+	    		            </div>
+	    		        </div>
+	    		    </div>
+	    	    
+	    	    </div>
+
+	    	     	        
+	    	        
+	    	        
+	    	        
+	    	        
+	    	        
+<!-- Formulaire pour dissocier -->
+<div class="card shadow-sm" style="max-width: 1000px; margin: auto;">
+    <div class="card-body">
+        
+        <form action="/dissocier" method="post">
+            <div class="row mb-3">
+                <div class="col-sm-8">
+                    <div class="row">
+                        <div class="col">
+                            <th:block th:each="batiment : ${batimentList}">
+                                <!-- Itérer à travers chaque bâtiment -->
+                                <th:block th:each="composante : ${batiment.composantes}">
+                                    <div class="form-check">
+                                        <!-- Afficher chaque combinaison de bâtiment et composante sur une ligne -->
+                                        <input class="form-check-input" type="checkbox" name="composanteToRemove" th:value="${composante.acronyme}" />
+                                        <label class="form-check-label" th:text="'Bâtiment ' + ${batiment.codeB} + ' - ' + ${composante.nom}"></label>
+                                    </div>
+                                </th:block>
+                            </th:block>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <button type="submit" class="btn btn-danger btn-sm">Dissocier</button>
+            </div>
+        </form>
+    </div>

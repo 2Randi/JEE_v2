@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Batiment</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
+
+    <script src="protected.js"></script>
+</head>
+<body class="bg-light">
+
+	<!-- Informations utilisateur -->
+	<div class="user-info text-end p-3">
+	    <p><strong><span th:text="${nom}"></span></strong></p>
+	    <p><strong><span th:text="${role}"></span></strong></p>
+	    <a href="/logout" class="btn btn-outline-danger btn-sm">Déconnexion</a>
+	</div>
+
+    <div class="container py-5">
+        <h1 class="text-center mb-4">Batiments</h1>
+
+        <p><a href="/" class="link-primary">Accueil</a></p>
+        
+        <p><a href="/campus" class="link-primary">Campus</a> | <a href="/composante" class="link-primary">Composante</a>
+        | <a href="/salle" class="link-primary">Salle</a></p>
+        
+        <p><a href="/addBatiment" class="link-primary">Ajouter</a> un batiment</p>
+        
+        <!-- Formulaire de recherche -->
+        <h6 class="mt-5">Rechercher un Batiment</h6>
+        <form action="/searchBatiment" method="get" class="d-flex mb-4" style="width: auto;">
+            <input type="text" name="codeB" class="form-control me-2" placeholder="Code du Batiment" style="width: 200px;">
+            <input type="number" name="anneeC" class="form-control me-2" placeholder="Année de Construction" style="width: 200px;">
+            <button type="submit" class="btn btn-primary">Rechercher</button>
+        </form>
+
+        <!-- Résultats de la recherche -->
+        <div class="row g-4">
+            <div class="col-md-3 col-lg-3" th:each="batiment : ${batiments}">
+                <div class="card shadow-sm" style="margin: 10px;">
+                    <div class="card-body">
+                        <h5 class="card-title" th:text="${batiment.codeB}">Code du batiment</h5>
+                        <p class="card-text">
+                            <strong>Année :</strong> <span th:text="${batiment.anneeC}">Année</span><br>
+                            <strong>Campus :</strong>
+                            <a th:href="@{/campus/{nomC}(nomC=${batiment.campus.nomC})}" th:text="${batiment.campus.nomC}">Campus</a><br>
+                            <a th:href="@{/composantesParBatiment(codeB=${batiment.codeB})}">Composantes</a><br>
+                            <a th:href="@{/sallesParBatiment(codeB=${batiment.codeB})}">Salles</a>
+                        </p>
+                        <div class="d-flex justify-content-between">
+                   
+                        	
+                            <a th:href="@{/updateBatimentForm(codeB=${batiment.codeB})}" class="btn btn-warning btn-sm">Modifier</a>
+                            <form th:action="@{/deleteBatiment}" method="post" class="d-inline">
+                                <input type="hidden" name="codeB" th:value="${batiment.codeB}">
+                                <button type="submit" class="btn btn-danger btn-sm">Supprimer</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section : Liste des batiments -->
+        <div class="row g-4">
+            <div class="col-md-3 col-lg-3" th:each="batiment : ${batimentList}">
+                <div class="card shadow-sm" style="margin: 10px;">
+                    <div class="card-body">
+                        <h5 class="card-title" th:text="${batiment.codeB}">Code du batiment</h5>
+                        <p class="card-text">
+                            <strong>Année :</strong> <span th:text="${batiment.anneeC}">Année</span><br>
+                            <strong>Campus :</strong> 
+                            <a th:href="@{/campus/{nomC}(nomC=${batiment.campus.nomC})}" th:text="${batiment.campus.nomC}">Campus</a><br>
+                            
+                            <a th:href="@{/composantesParBatiment(codeB=${batiment.codeB})}">Composantes</a><br>
+                            <a th:href="@{/sallesParBatiment(codeB=${batiment.codeB})}">Salles</a>
+                        </p>
+                        <div class="d-flex justify-content-between">
+                        
+                            <a th:href="@{/updateBatimentForm(codeB=${batiment.codeB})}" class="btn btn-warning btn-sm">Modifier</a>
+                            <form th:action="@{/deleteBatiment}" method="post" class="d-inline">
+                                <input type="hidden" name="codeB" th:value="${batiment.codeB}">
+                                <button type="submit" class="btn btn-danger btn-sm">Supprimer</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+    <!-- Pied de page -->
+    <footer>
+        <p>&copy; 2025 Université de Montpellier - Informatique - <strong>Tsiory RANDRIAMISAINA</strong></p>
+    </footer>
+</body>
+</html>
