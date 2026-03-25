@@ -97,11 +97,11 @@ Le projet utilise Spring Security pour protéger les endpoints.
 
 <img width="500" height="300" alt="um1" src="https://github.com/user-attachments/assets/cb1eb02b-67b3-42bb-a87a-c6179a7f07fb" />
 
+<img width="500" height="300" alt="um6" src="https://github.com/user-attachments/assets/b4293dd0-0289-4db7-ad8d-5abcf65fbcf1" />
+
 <img width="250" height="250" alt="um3" src="https://github.com/user-attachments/assets/d5978696-0f84-43d0-91b8-883cf2ba6642" />
 
 <img width="400" height="300" alt="um5" src="https://github.com/user-attachments/assets/77e48397-7ddd-4609-b10c-5ecbd5712011" />
-
-<img width="500" height="300" alt="um6" src="https://github.com/user-attachments/assets/b4293dd0-0289-4db7-ad8d-5abcf65fbcf1" />
 
 ## État du projet
 
