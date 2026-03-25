@@ -84,12 +84,6 @@ public class BatimentService {
         return batimentRepository.findByCodeBAndAnneeC(codeB, anneeC);
     }
 
-    /*
-	public List<Batiment> findByCodeBAndAnneeCAndCampus(String codeB, Integer anneeC, Campus campus) {
-		// TODO Auto-generated method stub
-		return batimentRepository.findByCodeBAndAnneeCAndCampus(codeB, anneeC, campus);
-	}
-	*/
 
 	public List<Batiment> findByCampus(Campus campus) {
 		// TODO Auto-generated method stub
@@ -150,7 +144,5 @@ public class BatimentService {
 		}
 		return campus;
 	}
-    
-
 }
 
