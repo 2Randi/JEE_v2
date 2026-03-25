@@ -49,17 +49,4 @@ public class UtilisateurController {
        
         return "redirect:/login"; 
     }
-    
-    /*
-    //tsy haiko
-    @GetMapping("/somePage")
-    public ResponseEntity<String> somePage() {
-        HttpHeaders headers = new HttpHeaders();
-        headers.add("Cache-Control", "no-cache, no-store, must-revalidate");
-        headers.add("Pragma", "no-cache");
-        headers.add("Expires", "0");
-        return ResponseEntity.ok().headers(headers).body("Some page content");
-    }
-    */
-
 }
