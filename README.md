@@ -1,5 +1,5 @@
 # Nom du projet 
-** Gestion de campus universitaire de l'Université de Montpellier **
+*Gestion des campus universitaire de l'Université de Montpellier*
 
 ## Description
 Ce projet est une application web développée avec Spring Boot, conçue pour explorer et mettre en pratique les concepts essentiels du framework Spring.
