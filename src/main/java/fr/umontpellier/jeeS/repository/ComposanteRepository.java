@@ -32,14 +32,6 @@ public interface ComposanteRepository extends CrudRepository<Composante, String>
 	@Query("SELECT DISTINCT c FROM Composante c JOIN c.batiments b WHERE b.campus.nomC = :nomC")
 	List<Composante> findByBatimentCampusNomC(@Param("nomC") String nomC);
 	
-	/*
-	@Query("SELECT c FROM Composante c JOIN c.batiments b WHERE c.composante.acronyme = :acronyme")
-	List<Composante> findByBatimentComposanteAcronyme(@Param("acronyme") String acronyme);
-	
-	//@Query("SELECT DISTINCT b.campus FROM Composante c JOIN c.batiments b WHERE c.acronyme = :acronyme")
-	@Query("SELECT DISTINCT c FROM Composante c JOIN c.batiments b WHERE b.campus.nomC = :nomC")
-    List<Campus> findCampusByComposanteAcronyme(@Param("acronyme") String acronyme);
-	*/
 	@Query("SELECT DISTINCT b.campus FROM Composante c JOIN c.batiments b WHERE c.acronyme = :acronyme")
 	List<Campus> findCampusByComposanteAcronyme(@Param("acronyme") String acronyme);
 }
