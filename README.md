@@ -1,0 +1,3 @@
+# JEE-project
+
+Ce projet utilise le Spring Framework, une plateforme robuste et flexible pour créer des applications Java. L'objectif est de concevoir une application web en utilisant Spring Boot, qui simplifie la configuration et le déploiement des applications Spring. Le projet inclut la configuration d'un projet Spring Boot, le développement de contrôleurs, de services et de modèles pour gérer les requêtes HTTP et les données, l'intégration d'une base de données relationnelle avec Spring Data JPA, et la mise en place de mesures de sécurité avec Spring Security pour protéger l'application. Ce projet permet de se familiariser avec les concepts clés de Spring et de développer une application web complète de bout en bout.
