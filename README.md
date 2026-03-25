@@ -1,5 +1,5 @@
 # Nom du projet 
-* Gestion de campus universitaire de l'Université de Montpellier *
+** Gestion de campus universitaire de l'Université de Montpellier **
 
 ## Description
 Ce projet est une application web développée avec Spring Boot, conçue pour explorer et mettre en pratique les concepts essentiels du framework Spring.
@@ -32,21 +32,24 @@ L’objectif est de fournir une application web complète, de bout en bout, tout
 
 
 ## Structure du projet
-Code
-src/
- ├── main/
- │   ├── java/
- │   │   └── com.example.project/
- │   │        ├── Security
- │   │        ├── Confi
- │   │        ├── controller/
- │   │        ├── service/
- │   │        ├── repository/
- │   │        └── model/
- │   └── resources/
- │       ├── application.properties
- │       └── templates/
- └── test/
+
+```
+ 📦 src
+┣ 📂 main/
+┃ ┣ 📂 java/
+┃ ┃ ┗ 📂 fr.umontpellier.jeeS/
+┃ ┃    ┣ 📂 Security
+┃ ┃    ┣ 📂 Config
+┃ ┃    ┣ 📂 controller
+┃ ┃    ┣ 📂 service
+┃ ┃    ┣ 📂 repository
+┃ ┃    ┗ 📂 model
+┃ ┗ 📂 resources/
+┃    ┣ 📄 application.properties
+┃    ┗ 📂 templates
+┗ 📂 test/
+
+```
 
  ## Installation & exécution
 1️ - Cloner le projet
