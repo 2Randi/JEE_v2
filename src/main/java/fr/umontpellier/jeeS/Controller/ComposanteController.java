@@ -27,9 +27,6 @@ public class ComposanteController {
 	@Autowired
     private BatimentService batimentService;
 	
-	//@Autowired
-    //private BatimentComposanteService batimentComposanteService;
-	
 	
 	/*****		READ		*****/
     //AFFICHER TOUS LES COMPOSANTE
@@ -127,38 +124,6 @@ public class ComposanteController {
     }
 	
     
-	
-	/*******	ADD		******/
-    //apres
-    /*
-    //FORMULAIRE pour l ajout de composante
-	@GetMapping("/addComposante")
-	@PreAuthorize("hasAuthority('ADMINISTRATEUR')")
-    public String addComposanteForm(Model model) {
-        model.addAttribute("composante", new Composante());
-        List<Batiment> batimentList = batimentService.getAllBatiments();
-        model.addAttribute("batimentList", batimentList);
-        return "ajoutComposante";  
-    }
-    
-    @PostMapping("/composante")
-	@PreAuthorize("hasAuthority('ADMINISTRATEUR')")
-    public String addComposante(@RequestParam String codeB, 
-    							@RequestParam String acronyme,
-    							@RequestParam String nom,
-    							@RequestParam String responsable
-    							) {
-        List<Batiment> batiment = batimentService.findByCodeB(codeB); 
-        Composante composante = new Composante();
-        composante.setAcronyme(acronyme);
-        composante.setNom(nom);
-        composante.setResponsable(responsable);
-        composante.setBatiments(batiment);
-        composanteService.saveComposante(composante);
-        return "redirect:/composante"; 
-    }
-    */
-    
     /**********		UPDATE		****************/
     //MAJ VILLE
     
@@ -212,29 +177,4 @@ public class ComposanteController {
 
         return "listeComposante"; 
     }
-    
-    /* 
-    @GetMapping("/campusDuComposante")
-    @PreAuthorize("hasAnyAuthority('ADMINISTRATEUR', 'GESTIONNAIRE', 'ETUDIANT')")
-    public String getCampusDuComposante(@RequestParam("acronyme") String acronyme, Model model) {
-        Composante composante = (Composante) composanteService.findByAcronyme(acronyme);
-        
-        List<Batiment> batiments = composante.getBatiments();
-        
-       
-        Campus campus = batiments.get(0).getCampus();
-        model.addAttribute("composante", composante);
-        model.addAttribute("campus", campus);
-        
-        return "campusDuComposante"; 
-    }
-
-   
-    @GetMapping("/campusDuComposante")
-    @PreAuthorize("hasAnyAuthority('ADMINISTRATEUR', 'GESTIONNAIRE', 'ETUDIANT')")
-    public List<Composante> getComposantesParCampus(@RequestParam String nomC) {
-        return composanteService.findComposantesByCampus(nomC);
-    }
-    
-    */
 }
