@@ -98,19 +98,7 @@ public class BatimentController {
                                Model model) {
 	
 		List<Batiment> batiments;
-		/*
-		Campus campus = null;
-	    if (nomC != null && !nomC.isEmpty()) {
-	        campus = (Campus) campusService.findByNomC(nomC);
-	    }
-	        
-	    } else if (codeB != null && !codeB.isEmpty() && campus != null) {
-	        batiments = batimentService.findByCodeBAndCampus(codeB, campus);
-	        
-	    } else if (campus != null ) {
-	        batiments = batimentService.findByCampus(campus);
-	    }
-	    */
+	
 		if (codeB != null && !codeB.isEmpty() && anneeC != null ) {
 	        batiments = batimentService.findByCodeBAndAnneeC(codeB, anneeC);
 	      
@@ -153,28 +141,8 @@ public class BatimentController {
         return "redirect:/batiments";  
     }
     
-    /*
-    // Ajouter une composante à un bâtiment via un formulaire (en POST)
-    //@PostMapping("/addComposanteToBatiment")
-    @PostMapping("/batiment")
-    @PreAuthorize("hasAuthority('ADMINISTRATEUR')")
-    public String addComposanteToBatiment(@RequestParam("codeB") String codeB,
-                                           @RequestParam("acronyme") String acronyme,
-                                           Model model) {
-        try {
-            batimentService.addComposanteToBatiment(codeB, acronyme);
-            model.addAttribute("message", "Composante ajoutée au bâtiment avec succès !");
-        } catch (Exception e) {
-            model.addAttribute("message", "Erreur : " + e.getMessage());
-        }
-        return "redirect:/batiment";  
-    }
-    */
-    
     
     /*****		DELETE		*****/
-    
-    
     //Supprimer un bâtiment
     @PostMapping("/deleteBatiment")
     @PreAuthorize("hasAuthority('ADMINISTRATEUR')")
@@ -185,22 +153,7 @@ public class BatimentController {
         return "redirect:/batiments"; 
     }
     
-    /*
-    //@PostMapping("/removeComposanteFromBatiment")
-    @PostMapping("/deleteBatiment")
-    @PreAuthorize("hasAuthority('ADMINISTRATEUR')")
-    public String removeComposanteFromBatiment(@RequestParam("codeB") String codeB,
-                                               @RequestParam("acronyme") String acronyme,
-                                               Model model) {
-        try {
-            batimentService.removeComposanteFromBatiment(codeB, acronyme);
-            model.addAttribute("message", "Composante supprimée du bâtiment avec succès !");
-        } catch (Exception e) {
-            model.addAttribute("message", "Erreur : " + e.getMessage());
-        }
-        return "redirect:/batiment";  
-    }
-    */
+  
     
     /**********		UPDATE		****************/
     //MAJ ANNEE et CAMPUS
@@ -267,9 +220,4 @@ public class BatimentController {
         model.addAttribute("acronyme", acronyme);
         return "campusParComposante";
     }
-    
-    
- 
-
-
 }
