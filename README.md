@@ -1,5 +1,5 @@
 # Nom du projet 
-*Gestion des campus universitaire de l'Université de Montpellier*
+# *Gestion des campus universitaire de l'Université de Montpellier*
 
 ## Description
 Ce projet est une application web développée avec Spring Boot, conçue pour explorer et mettre en pratique les concepts essentiels du framework Spring.
@@ -9,8 +9,7 @@ Il inclut :
 - L’intégration d’une base de données via Spring Data JPA
 - La mise en place de la sécurité avec Spring Security
 - Encodage et hachage des mots de passe : BCrypt
-
-Une architecture claire et évolutive
+- Une architecture claire et évolutive
 
 L’objectif est de fournir une application web complète, de bout en bout, tout en appliquant les bonnes pratiques du développement Java moderne.
 
@@ -60,10 +59,20 @@ cd jeeS
 2️ - Configurer la base de données
 Dans application.properties :
 
-spring.datasource.url=jdbc:mysql://localhost:3306/jee
+spring.application.name=jeeS
+spring.datasource.url=jdbc:mysql://localhost:3306/projet_jee
 spring.datasource.username=root
 spring.datasource.password=ton_mot_de_passe
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+spring.jpa.hibernate.ddl-auto=none
+
+JPA / Hibernate Configuration : 
 spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+logging.level.org.springframework.security=DEBUG
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQLDialect
+spring.main.allow-bean-definition-overriding=true
+spring.main.allow-circular-references=true
 
 3️ - Lancer l’application
 bash
