@@ -19,21 +19,6 @@ public class BatimentService {
     private BatimentRepository batimentRepository;
 	
 	
-	/*
-	//Afficher tous les batiments
-    public List<Batiment> getAllBatiment() {
-        return (List<Batiment>) batimentRepository.findAll();
-    }
-
-   //ajout batiment
-    public Batiment addBatiment(Batiment batiment) {
-        if (batimentRepository.existsById(batiment.getCodeB())) {
-            throw new IllegalArgumentException("Le batiment avec ce nom existe déjà.");
-        }
-        return batimentRepository.save(batiment);
-    }
-    */
-	
     /*****		READ		*****/
 	public List<Batiment> getAllBatiments() {
         return (List<Batiment>) batimentRepository.findAll();
