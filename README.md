@@ -1,7 +1,6 @@
-# Nom du projet 
-# *Gestion des campus universitaires de l'Université de Montpellier*
+ ## *Gestion des campus universitaires de l'Université de Montpellier*
 
-## Description
+### Description
 Ce projet est une application web développée avec Spring Boot, conçue pour explorer et mettre en pratique les concepts essentiels du framework Spring.
 Il inclut :
 - La configuration d’un projet Spring Boot
@@ -13,7 +12,7 @@ Il inclut :
 
 L’objectif est de fournir une application web complète, de bout en bout, tout en appliquant les bonnes pratiques du développement Java moderne.
 
-## Technologies utilisées
+### Technologies utilisées
 
 | Technologie        | Rôle                          |
 |-------------------|-------------------------------|
@@ -30,7 +29,7 @@ L’objectif est de fournir une application web complète, de bout en bout, tout
 | Bootstrap         | Framework CSS pour le design  |
 
 
-## Structure du projet
+### Structure du projet
 
 ```
  📦 src
@@ -50,7 +49,7 @@ L’objectif est de fournir une application web complète, de bout en bout, tout
 
 ```
 
- ## Installation & exécution
+ ### Installation & exécution
 1️ - Cloner le projet
 ```
 git clone https://github.com/2Randi/JEE_v2.git
@@ -85,7 +84,7 @@ L’application sera disponible sur :
 http://localhost:8080
 ```
 
-## Sécurité
+### Sécurité
 Le projet utilise Spring Security pour protéger les endpoints.
 
 - rôles : administrateur, gestionnaire, étudiant
@@ -93,7 +92,7 @@ Le projet utilise Spring Security pour protéger les endpoints.
 - méthode d’authentification : JWT
 - Mot de passe crypté : BCryptPasswordEncode
 
-## Captures d’écran
+### Captures d’écran
 
 <img width="500" height="300" alt="um1" src="https://github.com/user-attachments/assets/cb1eb02b-67b3-42bb-a87a-c6179a7f07fb" />
 
@@ -103,7 +102,7 @@ Le projet utilise Spring Security pour protéger les endpoints.
 
 <img width="400" height="300" alt="um5" src="https://github.com/user-attachments/assets/77e48397-7ddd-4609-b10c-5ecbd5712011" />
 
-## État du projet
+### État du projet
 
 - [x] Configuration Spring Boot
 - [x] Architecture MVC
@@ -111,7 +110,7 @@ Le projet utilise Spring Security pour protéger les endpoints.
 - [ ] Tests unitaires
 - [x] Documentation
 
-## Auteur
+##" Auteur
 **RANDRIAMISAINA Tsiory (2Randi)**  
 
 Projet disponible sur GitHub :
